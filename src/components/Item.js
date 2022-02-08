@@ -73,7 +73,7 @@ const Item = () => {
   } else if (gotOrNot === true && magneticResult.length >= 0) {
     return (
       <div className="flex flex-col m-5 w-screen md:w-auto">
-        <div className="flex items-end self-end">
+        <div className="flex items-end self-end ml-2">
           <button
             className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-white font-bold py-2 px-4 rounded inline-flex items-center"
             onClick={sortfiles}
@@ -137,10 +137,10 @@ const Item = () => {
     );
   } else if (gotOrNot === false && search === true) {
     return <Searching />;
+  } else if (gotOrNot === true && magneticResult.length === 0) {
+    return <Empty />;
   } else if (gotOrNot === false && search === false) {
     return <Welcome />;
-  } else if (gotOrNot === true && magneticResult.length <= 0) {
-    return <Empty />;
   } else {
     return <Welcome />;
   }
