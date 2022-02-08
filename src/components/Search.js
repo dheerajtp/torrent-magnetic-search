@@ -33,7 +33,7 @@ const Search = () => {
       setSearch(false);
       setGotOrNot(false);
     } else {
-      let newkeyword = query.split(" ").join("%20");
+      let newkeyword =await query.replace(/\s/g,'%20');
       addToast("Searching...!", { appearance: "warning" });
       setSearch(true);
       getTorrent(newkeyword);
